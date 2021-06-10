@@ -35,8 +35,8 @@ and `ses_notifications` table to store complaint and bounce notifications receiv
 
 ### Create SNS topics
 Go to your AWS SNS console and create two HTTP/S topic with these endpoints: 
-- https://yourapp.tld/aws/sns/ses/bounces to listen to bounce notifications
-- https://yourapp.tld/aws/sns/ses/complaints to listen to complaint notifications
+- https://yourapp.tld/aws/sns/ses/bounces  listen to bounce notifications
+- https://yourapp.tld/aws/sns/ses/complaints  listen to complaint notifications
 
 These endpoints can be customized in the [config file](#config-file). Note that as soon as you create
 these endpoints, they will be automatically confirmed. If not, you can use `php artisan aws:sns:subscribe-url` command to print out 
