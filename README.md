@@ -4,7 +4,7 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/oza75/laravel-ses-complaints.svg?style=flat-square)](https://packagist.org/packages/oza75/laravel-ses-complaints)
 ![GitHub Actions](https://github.com/oza75/laravel-ses-complaints/actions/workflows/main.yml/badge.svg)
 
-This package listens for AWS SNS notifications and stops sending mail to email addresses that have received a permanent rebound notification or users who have marked an email as spam.
+This package listens to AWS SNS notifications and stops sending mail to email addresses that have received a permanent rebound notification or users who have marked an email as spam.
 
 ## How it works
 
