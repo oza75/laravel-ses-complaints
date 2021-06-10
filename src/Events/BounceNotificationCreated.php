@@ -1,0 +1,30 @@
+<?php
+
+
+namespace Oza75\LaravelSesComplaints\Events;
+
+
+use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Events\Dispatchable;
+use Illuminate\Queue\SerializesModels;
+
+class BounceNotificationCreated implements ShouldQueue
+{
+    use Dispatchable, InteractsWithSockets, SerializesModels;
+
+    /**
+     * @var Model
+     */
+    public $notification;
+
+    /**
+     * BounceNotificationCreated constructor.
+     * @param Model $notification
+     */
+    public function __construct($notification)
+    {
+        $this->notification = $notification;
+    }
+}

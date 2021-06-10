@@ -1,0 +1,56 @@
+{
+    "name": "oza75/laravel-ses-complaints",
+    "description": "Laravel SES complaints and bounces manager",
+    "keywords": [
+        "oza75",
+        "laravel-ses-complaints"
+    ],
+    "homepage": "https://github.com/oza75/laravel-ses-complaints",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Aboubacar OUATTARA",
+            "email": "abouba181@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-json": "*",
+        "aws/aws-php-sns-message-validator": "^1.6",
+        "illuminate/support": "^8.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^6.18",
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Oza75\\LaravelSesComplaints\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Oza75\\LaravelSesComplaints\\Tests\\": "tests",
+            "Oza75\\LaravelSesComplaints\\Database\\Factories\\": "database/factories"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Oza75\\LaravelSesComplaints\\LaravelSesComplaintsServiceProvider"
+            ],
+            "aliases": {
+                "LaravelSesComplaints": "Oza75\\LaravelSesComplaints\\LaravelSesComplaintsFacade"
+            }
+        }
+    }
+}
