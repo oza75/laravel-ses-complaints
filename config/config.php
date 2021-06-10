@@ -1,8 +1,5 @@
 <?php
 
-/*
- * You can place your custom package configuration in here.
- */
 return [
     /**
      * If enabled is set to true, this package will intercept each mail then check
