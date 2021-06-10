@@ -18,7 +18,7 @@ jobs:
                 stability: [prefer-lowest, prefer-stable]
                 include:
                     - laravel: 8.*
-                      testbench: ^6.6
+                      testbench: ^6.18
 
         name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -39,6 +39,7 @@ jobs:
                   echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
             - name: Install dependencies
               run: |
-                  composer install --no-interaction
+                  composer require "laravel/framework:${{ matrix.laravel }}" "aws/aws-php-sns-message-validator:^1.6" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
+                  composer update --${{ matrix.stability }} --prefer-dist --no-interaction
             - name: Execute tests
               run: vendor/bin/phpunit
