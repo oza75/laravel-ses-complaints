@@ -50,7 +50,7 @@ class LaravelSesComplaintsServiceProvider extends ServiceProvider
                 SubscribeUrlCommand::class,
             ]);
 
-//            $this->publishMigrations(['create_sns_subscriptions_table.php', 'create_ses_notifications_table.php']);
+            $this->publishMigrations(['create_sns_subscriptions_table.php', 'create_ses_notifications_table.php']);
         }
 
         Event::listen(MessageSending::class, CheckIsMessageShouldBeSend::class);
