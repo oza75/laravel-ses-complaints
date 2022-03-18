@@ -7,15 +7,16 @@ namespace Oza75\LaravelSesComplaints\Contracts;
 use Closure;
 use Illuminate\Mail\Mailable;
 use Illuminate\Notifications\Notification;
-use Swift_Message;
+use Symfony\Component\Mime\Email;
 
 interface CheckMiddleware
 {
     /**
-     * @param Swift_Message $message
+     * @param Email   $message
      * @param Closure $next
-     * @param array $options
+     * @param array   $options
+     *
      * @return mixed|bool
      */
-    public function handle(Swift_Message $message, Closure $next, array $options = []);
+    public function handle(Email $message, Closure $next, array $options = []);
 }

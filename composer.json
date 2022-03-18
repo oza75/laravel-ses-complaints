@@ -21,7 +21,7 @@
         "aws/aws-php-sns-message-validator": "^1.6"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.18",
+        "orchestra/testbench": "^7.0",
         "phpunit/phpunit": "^9.5"
     },
     "autoload": {
