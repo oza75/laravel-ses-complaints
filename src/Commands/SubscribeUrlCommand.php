@@ -8,6 +8,7 @@ use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Schema;
 use Oza75\LaravelSesComplaints\LaravelSesComplaints;
+use Oza75\LaravelSesComplaints\LaravelSesComplaintsFacade;
 use Oza75\LaravelSesComplaints\LaravelSesComplaintsServiceProvider;
 use Oza75\LaravelSesComplaints\Models\Subscription;
 
@@ -20,7 +21,7 @@ class SubscribeUrlCommand extends Command
 
     public function handle(): int
     {
-        $model = LaravelSesComplaints::subscriptionModel();
+        $model = LaravelSesComplaintsFacade::subscriptionModel();
 
         if (!Schema::hasTable($model->getTable())) {
             $this->error("You need run migration first !");
@@ -41,7 +42,7 @@ class SubscribeUrlCommand extends Command
         $subscription = $model->newQuery()->where('topic_arn', $topic)->latest()->first();
 
         if (!$subscription) {
-           throw new \Error("no subscription confirmation request found for this topic !");
+            throw new \Error("no subscription confirmation request found for this topic !");
         }
 
         $this->info("SubscribeURL: " . $subscription->subscribe_url);
