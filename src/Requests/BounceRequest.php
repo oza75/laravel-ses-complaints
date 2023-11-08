@@ -50,7 +50,7 @@ class BounceRequest extends BaseRequest
         foreach ($recipients as $recipient) {
             $destinations[] = [
                 "email" => $recipient["emailAddress"],
-                "action" => $recipient["action"],
+                "action" => $recipient["action"] ?? null,
                 "options" => array_merge($additional, [
                     "status" => $recipient["status"] ?? null,
                     "diagnostic" => $recipient["diagnosticCode"] ?? null,
