@@ -1,0 +1,23 @@
+FROM php:7.4-fpm
+
+RUN apt-get update && apt-get install -y \
+        zip \
+        unzip \
+        git \
+        curl \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libonig-dev \
+        libxml2-dev \
+        libzip-dev \
+        pkg-config \
+        libssl-dev
+
+RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gd pdo_mysql zip mbstring exif pcntl bcmath opcache gettext
+
+# install composer
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
+
+WORKDIR /var/www
