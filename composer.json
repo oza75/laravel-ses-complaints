@@ -16,13 +16,14 @@
         }
     ],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^8.0",
         "ext-json": "*",
+        "laravel/framework": "^9.0|^10.0",
         "aws/aws-php-sns-message-validator": "^1.6"
     },
     "require-dev": {
-        "orchestra/testbench": "^6.0|^7.0",
-        "phpunit/phpunit": "^9.5"
+        "orchestra/testbench": "^7.0|^8.0",
+        "phpunit/phpunit": "^9.5|^10.1"
     },
     "autoload": {
         "psr-4": {

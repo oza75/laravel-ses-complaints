@@ -15,6 +15,17 @@ defined in the [config file](#config-file), it stops the email sending process o
 
 ## Installation
 
+Before the installation process, please refer to the version mapping table below to ascertain compatibility between `laravel-ses-complaints` package version and your Laravel application:
+
+| Package Version | Laravel Version |
+|-----------------|-----------------|
+| v1.0.0          | 9 & 10          |
+| v0.0.4          | 9               |
+| v0.0.3          | 9               |
+| v0.0.2          | 8               |
+
+Ensure you select the appropriate version that corresponds with your Laravel version to guarantee full functionality and compatibility.
+
 You can install the package via composer:
 
 ```bash
